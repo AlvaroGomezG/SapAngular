@@ -1,1 +1,15 @@
-<p>heroes</p>
+<div class="container animated fadeIn pading-bottom">
+    <h1>{{title}} <small>{{titleSmall}}</small> </h1>
+
+    <div class="card-columns">
+        <div class="card" *ngFor="let heroe of data; let i=index">
+            <img src="{{ heroe.img }}" class="card-img-top" alt="{{ heroe.nombre }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ heroe.nombre }}</h5>
+                <p class="card-text"> {{ heroe.bio }} </p>
+                <p class="card-text"><small class="text-muted">{{ heroe.casa}}  {{ heroe.aparicion }}</small></p>
+                <button (click)="verHeroe(i)" type="button" class="button btn-outline-primary btn-block">{{ titleBtn }}</button>
+                <!--<a [routerLink]="['/heroe',i]" routerLinkActive="router-link-active" class="btn-outline-primary">ver más link..</a>-->
+            </div>
+        </div>
+    </div>
