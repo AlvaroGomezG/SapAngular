@@ -62,6 +62,10 @@ export class HeroesService {
     public getHeroes() {
         return this.data;
     }
+
+    public getHeroesById( i: number ) {
+      return this.data [i];
+    }
 }
 
 export interface Heroe {

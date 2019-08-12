@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroesService, Heroe } from '../../services/heroes.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -12,7 +14,8 @@ export class HeroesComponent implements OnInit {
   titleBtn: string;
   data: Heroe [];
 
-  constructor(private _heroesService: HeroesService) {
+
+  constructor(private _heroesService: HeroesService, private router: Router ) {
     this.title = 'Marvel';
     this.titleSmall = 'DC -Marvel';
     this.titleBtn = 'Ver más...';
@@ -23,7 +26,7 @@ export class HeroesComponent implements OnInit {
   }
 
   verHeroe( i: number) {
-  console.log(i);
+    this.router.navigate( ['/heroe', i] );
   }
 
 }
