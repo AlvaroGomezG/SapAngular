@@ -1,8 +1,15 @@
 <div class="container animated fadeIn pading-bottom">
     <h1>{{ title }} <small>{{ titleSmall }}</small> </h1>
 
+    <div class="alert alert-info active fadeIn" role="alert" *ngIf="heroes.length == 0">
+        <h3>
+            No se encontraron resultados.
+        </h3>
+    </div>
+
     <div class="card-columns">
-        <div class="card" *ngFor="let heroe of data; let i=index">
+        <div class="card" *ngFor="let heroe of heroes; let i=index">
+
             <img src="{{ heroe.img }}" class="card-img-top" alt="{{ heroe.nombre }}">
             <div class="card-body">
                 <h5 class="card-title">{{ heroe.nombre }}</h5>

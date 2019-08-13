@@ -66,6 +66,12 @@ export class HeroesService {
     public getHeroesById( i: number ) {
       return this.data [i];
     }
+
+    public getHeroeByName( nombre: string ) {
+      nombre = nombre.toLocaleLowerCase();
+      // console.log(this.data.filter( x => x.nombre.toLocaleLowerCase().includes( nombre ) ));
+      return this.data.filter( x => x.nombre.toLocaleLowerCase().includes( nombre ) );
+    }
 }
 
 export interface Heroe {

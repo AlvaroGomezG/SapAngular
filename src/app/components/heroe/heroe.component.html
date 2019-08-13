@@ -1,3 +1,24 @@
-<p>
-    {{ heroe }}
-</p>
+<h1> {{ heroe.nombre | uppercase }} <small>( {{ heroe.aparicion | date : 'y' }} )</small></h1>
+<hr>
+
+<div class="row animated fadeIn">
+
+    <div class="col-md-4">
+
+        <img src="{{ heroe.img }}" clas="img-fluid" alt="{{ heroe.nombre }}">
+        <br><br>
+        <a [routerLink]="['/heroes']" routerLinkActive="router-link-active" class="btn-outline-primary"> Regresar </a>
+    </div>
+    <div class="col-md-8">
+        <h3>{{ heroe.nombre }}</h3>
+        <hr>
+        <p>
+            {{ heroe.bio }}
+        </p>
+        <div>
+            <img class="img-logo" src="/assets/img/{{heroe.casa}}.jpg" alt="">
+        </div>
+
+    </div>
+
+</div>
